@@ -15,7 +15,7 @@ class ProductFactory extends Factory
     {
         return [
             'product_category_id' => $this->faker->numberBetween(1, 5),
-            'name' => $this->faker->word(),
+            'name' => ucwords($this->faker->word()),
             'description' => $this->faker->paragraph(),
             'price' => $this->faker->randomNumber(4, true),
             'image' => $this->faker->imageUrl(640, 480, 'animals', true)
