@@ -14,25 +14,8 @@ class ProductSeeder extends Seeder
      */
     public function run()
     {
-        $products = [
-            [
-                'product_category_id' => 1,
-                'name' => 'Apple',
-                'description' => 'Very sweet fruit.',
-                'price' => 10000,
-                'image' => 'apple_image.jpg'
-            ],
-            [
-                'product_category_id' => 3,
-                'name' => 'Takoyaki',
-                'description' => 'Japanese delicious food.',
-                'price' => 8000,
-                'image' => 'takoyaki_image.jpg'
-            ]
-        ];
-
-        foreach ($products as $key => $value) {
-            Product::create($value);
-        }
+        Product::factory()
+            ->count(5)
+            ->create();
     }
 }
